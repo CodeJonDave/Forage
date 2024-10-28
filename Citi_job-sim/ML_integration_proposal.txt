@@ -1,0 +1,119 @@
+CREDIT RISK MODELING PROPOSAL
+
+
+Summary of Benefits:
+
+The implementation of machine learning (ML) for our credit risk modeling (CRM) will significantly enhance the accuracy of our predictions regarding defaults, on-time payments, and early paid-in-full scenarios. By leveraging historical data and advanced algorithms, the system can identify patterns and correlations that might otherwise be overlooked. This approach not only reduces potential biases but also minimizes errors associated with data inconsistencies.
+
+As a result, we can effectively mitigate risks and maximize our return on investment (ROI). The improved accuracy and elimination of redundant manual checks will lead to a notable increase in the efficiency of the loan approval process. This enhancement will decrease processing times, ultimately boosting customer satisfaction while reducing operational costs.
+
+Moreover, a key advantage of ML is its ability to refine predictions over time as more data becomes available, ensuring that our credit risk assessments remain relevant and effective in a dynamic market.
+
+
+Data Requirements:
+
+The system will require comprehensive and high-quality data to train and validate the ML models. Below is a list of critical variables.
+
+   Historical Loan Data:
+       Loan amounts 
+       Terms 
+       Interest rates 
+       Repayment histories 
+   
+   Customer Demographics: 
+       Age 
+       Income 
+       Employment status 
+       Credit history 
+       Marital status 
+   
+   Behavioral Data: 
+       Spending patterns 
+       Savings accounts 
+       Previous defaults 
+       Payment behaviors 
+       
+   External Data: 
+       Economic indicators 
+       Credit bureau scores 
+       Market trends
+
+The greater the size and variance of the dataset, the more efficiently and accurately the predictions will be. Ensuring data quality and comprehensiveness is vital for the successful implementation of the machine learning model.
+
+
+
+Data Outputs:
+
+The data outputs empowering loan officers to use in the review process to aid in making a more informed decision:
+
+Risk Score: A numerical representation indicating the likelihood of default
+
+Decision Recommendations: Automated suggestions for loan approval, conditional approval, or rejection based on risk thresholds
+
+Risk profiles: Detailed reports outlining an individual's risk characteristics, with relational influence to the risk score
+
+Visualization tools: Graphical representations of risk distributions, trends over time, historical data comparisons to aid loan officers in making more informed decisions
+
+
+
+Architecture:
+
+Given our constraints, such as data availability, computational resources, and the need for interpretability, the following two models stand out as the best possible choices for our credit risk modeling system.
+
+
+Random Forests:
+
+Handles Non-linear Relationships: Capable of managing complex interactions between variables, leading to more accurate predictions for diverse loan scenarios. Reduces manual oversight needed for complex cases, speeding up the loan approval process.
+
+Works Well with Large Feature Sets: Can handle many variable simultaneously without losing performance. Enables the system to consider more borrower data points (spending patterns, demographics), improving overall decision quality.
+
+Robust Against Overfitting: Aggregates multiple decision trees, reducing the risk of overfitting to the training data. Ensures consistent loan approval/rejection results, reducing the need for manual re-evaluation of borderline cases.
+
+Provides Feature Importance Insights: Identifies which variables are most influential in making predictions, improving model interpretability. Supports loan officers in understanding why a particular loan was approved or rejected, helping them explain decisions more clearly to the customer.
+
+Moderate Computational Needs: Performs efficiently even on moderately sized datasets without requiring high-end computational power. Reduces the need for expensive infrastructure, minimizing operational costs while maintaining efficiency.
+
+
+Gradient Boosting Machines (GBM):
+
+Exception Predictive Power: Models like XGBoost and LightGBM can capture subtle patterns in the data, leading to highly accurate predictions. Enhances the precision of loan approvals and rejections, reducing the likelihood of defaults and increasing profit margins.
+
+Captures Complex Relationships: Can effectively model intricate relationships between variables, resulting in more nuanced decisions. Allows for more accurate predictions in complicated cases, reducing the need for human intervention in riskier loans.
+
+Works Well with Large and Complex Datasets: Ideal for datasets that include high volumes of customer and external data. Leverages large datasets (economic indicators, credit score) to make more informed decisions, improving the overall credit risk assessment process.
+
+Higher Computational Requirements: Requires more resources that random forests, especially with larger datasets, but offers superior performance when these resources are available. Increases overall system accuracy and reduces false positives/negatives, cutting down manual rechecks and improving throughput.
+
+
+Risks And Challenges:
+
+Implementing a ML system for CRM comes with it's own risks and challenges. Below is a list of them along with there implications for the system and the overall loan process.
+
+       Challenge: Data quality (Both)
+       Risk: Poor-quality or incomplete data could lead to inaccurate predictions.
+       Mitigation: Perform thorough data preprocessing cleaning, and validation before model          
+       training.
+
+       Challenge: Interpretability (GBM)
+       Risk: GBM models can be difficult to interpret, potentially complicating regulatory compliance.
+       Mitigation: Use feature importance techniques or complement GBM with simpler models for interpretability.
+
+       Challenge: Overfitting (GBM)
+       Risk: GBM models, if not tuned properly, may overfit to training data
+       Mitigation: Implement cross-validation and hyperparameter tuning to prevent overfitting.
+
+       Challenge: Computational Resources (GBM)
+       Risk: GBM requires more computational power, leading to higher operational costs.
+       Mitigation: Allocate resources efficiently and optimize model parameters to balance performance costs.
+
+       Challenge: Bias in Historical Data (Both)
+       Risk: Biases in historical data may cause discriminatory predictions.
+       Mitigation: Regular audits of the models and data for bias, applying fairness correction techniques as needed.
+
+       Challenge: Scalability (Both)
+       Risk: Processing large volumes of data may slow down the system.
+       Mitigation: Optimize algorithms for speed, and consider distributed computing for scalability.
+
+       Challenge: Transparency (Random Forests)
+       Risk: Random Forest models may still be to complex to interpret for regulatory purposes.
+       Mitigation: Use feature importance metrics to provide insights into decision-making process.
